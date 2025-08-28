@@ -317,7 +317,7 @@ const symStyleSel = $('#symStyle');
 const wpm = $('#wpm');
 const hz = $('#hz');
 const vol = $('#vol');
-const loopChk = $('#loop');
+const loopChk = $('#loopChk');
 const dotMsSpan = $('#dotMs');
 const wpmVal = $('#wpmVal');
 const hzVal = $('#hzVal');
@@ -590,44 +590,61 @@ async function visualStop(){
   document.getElementById('playBtn').disabled = false;
 }
 
+// Schedules one pass of the flash sequence
+function runVisualSequence(seq, dot) {
+  clearVisualTimersOnly();
+  let tAccum = 0;
+
+  seq.forEach(u => {
+    const durMs = u.dur * dot * 1000;
+    const id = setTimeout(() => {
+      if (!visualStopFlag) setOverlay(u.type === 'tone' ? 'white' : 'black');
+    }, tAccum);
+    visualTimers.push(id);
+    tAccum += durMs;
+  });
+
+  // End-of-sequence handler
+  const endTimer = setTimeout(() => {
+    if (visualStopFlag) return;
+    setOverlay('black');
+
+    const loopOn = document.getElementById('loop')?.checked;
+    if (loopOn) {
+      // short pause before restarting
+      const pauseMs = 200;
+      const again = setTimeout(() => {
+        if (!visualStopFlag) runVisualSequence(seq, dot);
+      }, pauseMs);
+      visualTimers.push(again);
+      return;
+    }
+
+    // not looping → stop
+    visualStop();
+  }, tAccum + 50);
+  visualTimers.push(endTimer);
+}
+
 async function visualPlay(morse){
   if (!morse || !morse.trim()) return;
-  await visualStop(); // reset prior run
+  await visualStop();   // reset
   visualStopFlag = false;
   visualActive = true;
 
   flashOverlay.classList.add('active');
-  await requestFullscreen(flashOverlay); // continue even if it fails
+  await requestFullscreen(flashOverlay);  // best-effort
   setOverlay('black');
 
-  // Disable audio play while flashing to avoid double control conflicts
+  // disable/enable buttons
   document.getElementById('stopBtn').disabled = false;
   document.getElementById('playBtn').disabled = true;
 
-  const dot = getDotSecondsVisual();
-  const seq = scheduleVisualSequence(morse);
-  const start = performance.now();
-  let t = 0;
+  // Prepare sequence and run
+  const dot = 1.2 / Number(document.getElementById('wpm').value || 20);
+  const seq = scheduleVisualSequence(normalizeMorseSymbols(morse));
 
-  // Build timeouts for each unit
-  seq.forEach(u => {
-    const durMs = u.dur * dot * 1000;
-    const thisStart = t;
-    const on = setTimeout(() => {
-      if (visualStopFlag) return;
-      setOverlay(u.type === 'tone' ? 'white' : 'black');
-    }, thisStart);
-    visualTimers.push(on);
-    t += durMs;
-  });
-
-  // Ensure we end black and exit
-  const endTimer = setTimeout(() => {
-    if (visualStopFlag) return;
-    setOverlay('black');
-    visualStop();
-  }, t + 50);
-  visualTimers.push(endTimer);
+  runVisualSequence(seq, dot);
 }
 
 // Button wiring
