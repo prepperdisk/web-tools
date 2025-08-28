@@ -96,6 +96,30 @@
     .timing-display { font-family: 'Courier New', monospace; font-size: 0.85rem; color: var(--brass-light); background: rgba(0,0,0,0.4); padding: 12px; border-radius: 6px; border: 1px solid var(--brass); margin-top: 12px; }
     .monospace { font-family: 'Courier New', monospace; background: rgba(0,0,0,0.2); padding: 2px 4px; border-radius: 3px; }
     .toast { position: fixed; bottom: 20px; right: 20px; background: linear-gradient(145deg, var(--brass), var(--brass-dark)); color: #000; padding: 12px 16px; border-radius: 8px; border: 2px solid var(--brass-light); font-weight: bold; box-shadow: var(--shadow); z-index: 1000; }
+
+    /* ADC - Support for full screen/near full screen signalling */
+    .flash-overlay {
+      position: fixed;
+      inset: 0;
+      background: #000;                 /* start black (silence) */
+      z-index: 9999;
+      display: none;                    /* shown when playing */
+      touch-action: none;               /* avoid scroll on mobile */
+    }
+    .flash-overlay.active { display: block; }
+    .flash-overlay .hint {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      background: rgba(0,0,0,0.35);
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid rgba(255,255,255,0.25);
+    }
   </style>
 </head>
 <body>
@@ -186,6 +210,12 @@
         </div>
         <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
           <button id="playBtn" class="telegraph-key">TRANSMIT</button>
+            <button id="visualBtn" class="telegraph-key">VISUAL TRANSMIT (Full Screen Flash for Signalling)</button>
+
+            <!-- Put this anywhere inside <body> (e.g., at end of .container) -->
+            <div id="flashOverlay" class="flash-overlay" aria-hidden="true">
+              <div class="hint">Tap or press ESC to stop</div>
+            </div>          
           <button class="telegraph-key danger" id="stopBtn" disabled>STOP</button>
           <div class="switch-panel">
             <span style="font-size: 0.9rem; color: var(--brass-light); font-weight: bold;">LOOP</span>
@@ -487,6 +517,164 @@ document.addEventListener('DOMContentLoaded', function(){
   symStyleSel.value = 'ascii';
   doConvert();
 });
+
+// ---------- VISUAL TRANSMIT (Fullscreen Flasher) ----------
+const flashOverlay = document.getElementById('flashOverlay');
+const visualBtn = document.getElementById('visualBtn');
+let visualActive = false;
+let visualStopFlag = false;
+
+function getDotSecondsVisual(){
+  // matches your audio timing: 1.2 / WPM seconds
+  return 1.2 / Number(document.getElementById('wpm').value || 20);
+}
+
+function clearVisualTimersOnly(){
+  visualTimers.forEach(id => clearTimeout(id));
+  visualTimers = [];
+}
+
+function setOverlay(color){ // 'white' or 'black'
+  flashOverlay.style.background = (color === 'white') ? '#ffffff' : '#000000';
+}
+
+async function requestFullscreen(elem){
+  // Best effort; if denied, we still show the overlay.
+  try {
+    if (elem.requestFullscreen) return await elem.requestFullscreen();
+    if (elem.webkitRequestFullscreen) return await elem.webkitRequestFullscreen();
+    if (elem.msRequestFullscreen) return await elem.msRequestFullscreen();
+  } catch(_) {}
+}
+
+async function exitFullscreen(){
+  try {
+    if (document.fullscreenElement || document.webkitFullscreenElement || document.msFullscreenElement){
+      if (document.exitFullscreen) return await document.exitFullscreen();
+      if (document.webkitExitFullscreen) return await document.webkitExitFullscreen();
+      if (document.msExitFullscreen) return await document.msExitFullscreen();
+    }
+  } catch(_) {}
+}
+
+function scheduleVisualSequence(morse){
+  // Reuse your scheduler assumptions: '.'=1u tone, '-'=3u tone, intra=1u gaps, letter gap total 3u, word gap 7u.
+  const s = normalizeMorseSymbols(morse);
+  const units = [];
+  const words = s.split(' / ');
+  words.forEach((word, wi) => {
+    const letters = word.split(' ').filter(Boolean);
+    letters.forEach((code, ci) => {
+      for (let si=0; si<code.length; si++){
+        const sym = code[si];
+        const len = (sym === '.') ? 1 : 3;
+        units.push({type:'tone', dur: len});     // white
+        if (si < code.length - 1) units.push({type:'gap', dur: 1}); // black intra-symbol
+      }
+      if (ci < letters.length - 1) units.push({type:'gap', dur: 3}); // letter gap
+    });
+    if (wi < words.length - 1) units.push({type:'gap', dur: 7});     // word gap
+  });
+  return units;
+}
+
+async function visualStop(){
+  visualStopFlag = true;
+  visualActive = false;
+  clearVisualTimersOnly();
+  setOverlay('black');
+  flashOverlay.classList.remove('active');
+  await exitFullscreen();
+  // Re-enable buttons
+  document.getElementById('stopBtn').disabled = true;
+  document.getElementById('playBtn').disabled = false;
+}
+
+async function visualPlay(morse){
+  if (!morse || !morse.trim()) return;
+  await visualStop(); // reset prior run
+  visualStopFlag = false;
+  visualActive = true;
+
+  flashOverlay.classList.add('active');
+  await requestFullscreen(flashOverlay); // continue even if it fails
+  setOverlay('black');
+
+  // Disable audio play while flashing to avoid double control conflicts
+  document.getElementById('stopBtn').disabled = false;
+  document.getElementById('playBtn').disabled = true;
+
+  const dot = getDotSecondsVisual();
+  const seq = scheduleVisualSequence(morse);
+  const start = performance.now();
+  let t = 0;
+
+  // Build timeouts for each unit
+  seq.forEach(u => {
+    const durMs = u.dur * dot * 1000;
+    const thisStart = t;
+    const on = setTimeout(() => {
+      if (visualStopFlag) return;
+      setOverlay(u.type === 'tone' ? 'white' : 'black');
+    }, thisStart);
+    visualTimers.push(on);
+    t += durMs;
+  });
+
+  // Ensure we end black and exit
+  const endTimer = setTimeout(() => {
+    if (visualStopFlag) return;
+    setOverlay('black');
+    visualStop();
+  }, t + 50);
+  visualTimers.push(endTimer);
+}
+
+// Button wiring
+visualBtn.addEventListener('click', () => {
+  // Determine what to flash:
+  // If mode is text→morse, the output box already contains morse.
+  // If mode is morse→text, convert text back to morse for flashing.
+  let morseOut = '';
+  const mode = (Array.from(document.querySelectorAll('input[name="mode"]')).find(r=>r.checked)?.value) || 'text2morse';
+  if (mode === 'text2morse') {
+    morseOut = document.getElementById('output').value || '';
+  } else {
+    // flash the morse form of either output (if it has text) or input
+    const src = document.getElementById('output').value || document.getElementById('input').value || '';
+    // force ASCII symbols for timing clarity
+    morseOut = textToMorse(src, 'ascii');
+  }
+  // If style is "pretty", normalize to ASCII so white/black pulses match standard dot/dash
+  morseOut = normalizeMorseSymbols(morseOut); // ensures '.' and '-' + ' / '
+  visualPlay(morseOut);
+});
+
+// Stop on overlay tap or ESC
+flashOverlay.addEventListener('click', visualStop);
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && visualActive) { visualStop(); }
+});
+
+// Optional: stop visual if user hits STOP button
+document.getElementById('stopBtn').addEventListener('click', () => {
+  if (visualActive) visualStop();
+});
+
+// (Optional) Keep screen awake during visual transmit if browser supports it
+let wakeLock = null;
+async function requestWakeLock(){
+  try { wakeLock = await navigator.wakeLock.request('screen'); } catch(_) {}
+}
+async function releaseWakeLock(){
+  try { if (wakeLock) { await wakeLock.release(); wakeLock = null; } } catch(_) {}
+}
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && visualActive) requestWakeLock();
+});
+visualBtn.addEventListener('click', requestWakeLock);
+flashOverlay.addEventListener('click', releaseWakeLock);
+
 </script>
 </body>
 </html>
