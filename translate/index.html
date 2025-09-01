@@ -6,289 +6,948 @@
   <title>Pocket Phrasebook (EN · ES · PT · FR · IT · RU· DE)</title>
 <style>
   :root{
-    --bg:#0b1220; --panel:#0f1a2b; --muted:#90a4b0; --text:#eaf2ff; --accent:#48d597; --accent2:#7aa0ff; --danger:#ff6b6b;
-    --ring: rgba(122,160,255,.35); --shadow: 0 12px 30px rgba(0,0,0,.35); --chip:#18253a;
+    --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --bg-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --bg-tertiary: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --surface: rgba(255, 255, 255, 0.1);
+    --surface-elevated: rgba(255, 255, 255, 0.15);
+    --surface-hover: rgba(255, 255, 255, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --accent: #00d4ff;
+    --accent-glow: rgba(0, 212, 255, 0.3);
+    --success: #4ade80;
+    --danger: #f87171;
+    --border: rgba(255, 255, 255, 0.1);
+    --border-focus: rgba(255, 255, 255, 0.3);
+    --shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    --backdrop-blur: blur(20px);
+    --chip-bg: rgba(255, 255, 255, 0.1);
+    --chip-active: rgba(0, 212, 255, 0.2);
   }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    background:linear-gradient(180deg,#0a1120,#0c1426 40%,#0b1220);
-    color:var(--text);
-    font:500 16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
-  .wrap{max-width:1100px;margin:24px auto;padding:0 16px}
-  h1{font-weight:800;letter-spacing:.3px;margin:0 0 8px;font-size:28px}
-  .sub{color:var(--muted);margin:0 0 18px}
-  .panel{background:var(--panel);border:1px solid #1a2944;border-radius:18px;box-shadow:var(--shadow)}
-  .controls{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;padding:16px;border-bottom:1px solid #1a2944}
-  @media (max-width:900px){.controls{grid-template-columns:1fr 1fr}.show-all{grid-column:1/-1}}
-  @media (max-width:640px){.controls{grid-template-columns:1fr}.show-all{grid-column:auto}}
-  label{font-size:12px;color:var(--muted);display:block;margin:0 0 6px}
-  select,input[type="text"]{
-    width:100%;
-    padding:12px 12px;
-    border-radius:12px;
-    background:#0b162a;
+  
+  html, body {
+    height: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
     font-size: 16px;
-    color:var(--text);
-    border:1px solid #1a2944;
-    outline:none;
-    transition:.2s box-shadow;
+    line-height: 1.6;
+    overflow-x: hidden;
   }
-  select:focus,input[type="text"]:focus{box-shadow:0 0 0 3px var(--ring)}
-  .chips{display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px;border-bottom:1px solid #1a2944}
-  .chip{
-    background:var(--chip);
-    border:1px solid #243a64;
-    color:#cfe0ff;
-    padding:8px 12px;
-    border-radius:999px;
-    font-size:12px;
-    cursor:pointer;
-    user-select:none;
+  
+  /* Animated background elements */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 226, 0.3) 0%, transparent 50%);
+    animation: float 20s ease-in-out infinite;
+    z-index: -1;
   }
-  .chip.active{
-    background:#173255;
-    border-color:#2f6fd3;
-    color:#e9f1ff;
-    box-shadow:0 0 0 2px rgba(79,139,255,.25) inset;
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-30px) rotate(120deg); }
+    66% { transform: translateY(-20px) rotate(240deg); }
   }
-  .toolbar{display:flex;gap:10px;align-items:center;padding:12px 16px;border-bottom:1px solid #1a2944}
-  .toolbar .switch{display:flex;align-items:center;gap:10px;margin-left:auto}
-  .switch input{
-    appearance:none;
-    width:46px;
-    height:28px;
-    background:#21324f;
-    border-radius:999px;
-    position:relative;
-    outline:none;
-    cursor:pointer;
-    transition:.2s;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
   }
-  .switch input:checked{background:#265f3f}
-  .switch input:before{
-    content:\"\";position:absolute;top:4px;left:4px;
-    width:20px;height:20px;border-radius:50%;
-    background:#eaf2ff;transition:.2s;
+  
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem 0;
   }
-  .switch input:checked:before{left:22px}
-  .results{padding:8px}
-  table{width:100%;border-collapse:separate;border-spacing:0 10px}
-  th,td{padding:12px 14px;text-align:left}
-  th{font-size:12px;color:#9fb3c5;text-transform:uppercase;letter-spacing:.6px}
-  tr{background:#0c1730;border:1px solid #1a2944}
-  tr td:first-child{border-radius:12px 0 0 12px}
-  tr td:last-child{border-radius:0 12px 12px 0}
-  .langTag{font-size:12px;color:#9fb3c5}
-  .big{font-size:16px}
-  .rowtools{display:flex;gap:8px}
-  button.icon{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    border:1px solid #26406b;
-    background:#15233a;
-    color:#eaf2ff;
-    padding:8px 10px;
-    border-radius:10px;
-    cursor:pointer;
+  
+  .header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff, #e0e7ff, #c7d2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
   }
-  button.icon:hover{background:#1a2c4a}
-  .footer{color:#8ea3b6;font-size:12px;margin:14px 2px}
-  .stat{padding:8px 12px;border:1px dashed #203357;border-radius:10px}
-  .empty{color:#9fb3c5;padding:24px;text-align:center}
+  
+  .header::before {
+    content: '🌍';
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: gentleFloat 8s ease-in-out infinite;
+  }
+  
+  @keyframes gentleFloat {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    25% { 
+      transform: translateY(-8px) rotate(2deg); 
+    }
+    50% { 
+      transform: translateY(-4px) rotate(-1deg); 
+    }
+    75% { 
+      transform: translateY(-12px) rotate(1deg); 
+    }
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  .subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+  
+  .stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--surface);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  .main-panel {
+    background: var(--surface);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  
+  .controls-section {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .controls-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    backdrop-filter: var(--backdrop-blur);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  select.form-control {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding-right: 3rem;
+  }
+  
+  select.form-control option {
+    background: #1a2332;
+    color: var(--text-primary);
+    padding: 0.5rem;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+    background: var(--surface-hover);
+  }
+  
+  .form-control::placeholder {
+    color: var(--text-muted);
+  }
+  
+  .search-wrapper {
+    position: relative;
+  }
+  
+  .search-wrapper::before {
+    content: '🔍';
+    position: absolute;
+    left: 1rem;
+    top: 70%;
+    transform: translateY(-50%);
+    font-size: 1.125rem;
+    pointer-events: none;
+  }
+  
+  .search-input {
+    padding-left: 3rem;
+  }
+  
+  .categories-section {
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .section-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .category-chip {
+    background: var(--chip-bg);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s ease;
+    backdrop-filter: var(--backdrop-blur);
+  }
+  
+  .category-chip:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+  }
+  
+  .category-chip.active {
+    background: var(--chip-active);
+    border-color: var(--accent);
+    color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+  
+  .toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .toolbar-group {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    backdrop-filter: var(--backdrop-blur);
+  }
+  
+  .btn:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .toggle-switch {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  .switch {
+    position: relative;
+    width: 3rem;
+    height: 1.5rem;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    transition: 0.3s;
+    border-radius: 2rem;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1rem;
+    width: 1rem;
+    left: 0.125rem;
+    bottom: 0.125rem;
+    background: var(--text-primary);
+    transition: 0.3s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(1.5rem);
+  }
+  
+  .results-section {
+    padding: 1rem 2rem 2rem;
+  }
+  
+  .results-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.75rem;
+  }
+  
+  .results-table th {
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .results-table tbody tr {
+    background: var(--surface-elevated);
+    border-radius: 1rem;
+    transition: all 0.2s ease;
+  }
+  
+  .results-table tbody tr:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .results-table td {
+    padding: 1.5rem 1.25rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .results-table td:first-child {
+    border-left: 1px solid var(--border);
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  
+  .results-table td:last-child {
+    border-right: 1px solid var(--border);
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  
+  .phrase-main {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+  }
+  
+  .phrase-sub {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+  
+  .category-tag {
+    background: var(--chip-bg);
+    color: var(--text-secondary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    backdrop-filter: var(--backdrop-blur);
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .btn-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: var(--backdrop-blur);
+  }
+  
+  .btn-icon:hover {
+    background: var(--surface-hover);
+    transform: translateY(-1px);
+  }
+  
+  .btn-icon:active {
+    transform: translateY(0);
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+  }
+  
+  .empty-state::before {
+    content: '🔍';
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
+  
+  .footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--surface);
+    backdrop-filter: var(--backdrop-blur);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1rem;
+    }
+    
+    .controls-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .toolbar {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    
+    .toolbar-group {
+      justify-content: center;
+    }
+    
+    .categories {
+      justify-content: center;
+    }
+    
+    .results-table th,
+    .results-table td {
+      padding: 0.75rem;
+    }
+    
+    .action-buttons {
+      flex-direction: column;
+    }
+  }
 </style>
 
 </head>
 <body>
-  <div class="wrap">
-    <h1>🧭 Pocket Phrasebook (from Prepper Disk)</h1>
-    <p class="sub">Search by <strong>category</strong> or <strong>phrase</strong>. Choose a <strong>From</strong> and <strong>To</strong> language. 
-      <span class="stat" id="stat"></span>
-    </p>
+  <div class="container">
+    <header class="header">
+      <h1>Pocket Phrasebook</h1>
+      <p class="subtitle">
+        Master essential phrases in 7 languages. Search by category or phrase, choose your languages, and start communicating.
+        <span class="stats" id="stats">Loading phrases...</span>
+      </p>
+    </header>
 
-    <div class="panel">
-      <div class="controls">
-        <div>
-          <label for="fromLang">From</label>
-          <select id="fromLang"></select>
+    <main class="main-panel">
+      <section class="controls-section">
+        <div class="controls-grid">
+          <div class="form-group">
+            <label for="fromLang">From Language</label>
+            <select id="fromLang" class="form-control"></select>
+          </div>
+          <div class="form-group">
+            <label for="toLang">To Language</label>
+            <select id="toLang" class="form-control"></select>
+          </div>
+          <div class="form-group search-wrapper">
+            <label for="searchInput">Search Phrases</label>
+            <input 
+              id="searchInput" 
+              type="text" 
+              class="form-control search-input" 
+              placeholder="water, hospital, hello..."
+            />
+          </div>
         </div>
-        <div>
-          <label for="toLang">To</label>
-          <select id="toLang"></select>
-        </div>
-        <div>
-          <label for="q">Search (phrase or keyword)</label>
-          <input id="q" type="text" placeholder="e.g., water, hospital, hello" />
-        </div>
-      </div>
+      </section>
 
-      <div class="chips" id="chips"></div>
+      <section class="categories-section">
+        <h3 class="section-title">Filter by Category</h3>
+        <div class="categories" id="categories"></div>
+      </section>
 
-      <div class="toolbar">
-        <div class="rowtools">
-          <button class="icon" id="clearFilters">Clear filters</button>
-          <button class="icon" id="randomBtn">Random phrase</button>
+      <section class="toolbar">
+        <div class="toolbar-group">
+          <button class="btn" id="clearBtn">✨ Clear Filters</button>
+          <button class="btn" id="randomBtn">🎲 Random Phrase</button>
         </div>
-        <div class="switch show-all">
-          <label>Show all target languages</label>
-          <input id="showAll" type="checkbox"/>
+        <div class="toggle-switch">
+          <span>Show all languages</span>
+          <label class="switch">
+            <input type="checkbox" id="showAllToggle">
+            <span class="slider"></span>
+          </label>
         </div>
-      </div>
+      </section>
 
-      <div class="results">
-        <table>
+      <section class="results-section">
+        <table class="results-table">
           <thead>
             <tr>
-              <th style="width:140px">Category</th>
-              <th>From <span class="langTag" id="fromTag"></span></th>
-              <th>To <span class="langTag" id="toTag"></span></th>
-              <th style="width:210px">Tools</th>
+              <th style="width: 120px;">Category</th>
+              <th>From <span id="fromLangDisplay">(EN)</span></th>
+              <th>To <span id="toLangDisplay">(ES)</span></th>
+              <th style="width: 140px;">Actions</th>
             </tr>
           </thead>
-          <tbody id="tbody"></tbody>
+          <tbody id="resultsBody"></tbody>
         </table>
-        <div id="empty" class="empty" style="display:none">No results. Try a different search or category.</div>
-      </div>
-    </div>
+        <div id="emptyState" class="empty-state" style="display: none;">
+          <h3>No phrases found</h3>
+          <p>Try adjusting your search or selecting different categories.</p>
+        </div>
+      </section>
+    </main>
 
-    <p class="footer">Tip: Click the speaker to play with your device's built‑in offline speech (if available). Copy sends the translated text to your clipboard for quick sharing.</p>
+    <footer class="footer">
+      <p>💡 <strong>Pro Tip:</strong> Click the speaker icons to hear pronunciations using your device's built-in speech synthesis. Use the copy button to quickly share translations.</p>
+    </footer>
   </div>
 
 <script>
-  const LANGS = [
-    { code:'en', name:'English 🇺🇸 🇬🇧 🇦🇺', tts: 'en-US' },
-    { code:'es', name:'Español 🇪🇸 🇲🇽', tts: 'es-ES' },
-    { code:'pt', name:'Português 🇵🇹 🇧🇷', tts: 'pt-PT' },
-    { code:'fr', name:'Français 🇫🇷', tts: 'fr-FR' },
-    { code:'it', name:'Italiano 🇮🇹', tts: 'it-IT' },
-    { code:'ru', name:'Русский 🇷🇺', tts: 'ru-RU' },
-    { code:'de', name:'Deutsch 🇩🇪', tts: 'de-DE' }
+  const LANGUAGES = [
+    { code: 'en', name: 'English 🇺🇸', tts: 'en-US' },
+    { code: 'es', name: 'Español 🇪🇸', tts: 'es-ES' },
+    { code: 'pt', name: 'Português 🇵🇹', tts: 'pt-PT' },
+    { code: 'fr', name: 'Français 🇫🇷', tts: 'fr-FR' },
+    { code: 'it', name: 'Italiano 🇮🇹', tts: 'it-IT' },
+    { code: 'ru', name: 'Русский 🇷🇺', tts: 'ru-RU' },
+    { code: 'de', name: 'Deutsch 🇩🇪', tts: 'de-DE' }
   ];
 
-  const CATS = [
-    'Basics','Social','Numbers & Time','Directions','Transport','Food & Water','Lodging','Shopping & Trade','Health','Emergency',
-    'Safety','Communication','Weather','Tools & Equipment','Work & Tasks','Family & People','Documents','Money','Borders','Misc'
+  const CATEGORIES = [
+    'Basics', 'Social', 'Numbers & Time', 'Directions', 'Transport', 
+    'Food & Water', 'Lodging', 'Shopping & Trade', 'Health', 'Emergency',
+    'Safety', 'Communication', 'Weather', 'Tools & Equipment', 
+    'Work & Tasks', 'Family & People', 'Documents', 'Money', 'Borders', 'Misc'
   ];
 
-  let PHRASES = [];
+  let phrases = [];
+  let activeCategories = new Set();
 
-  // fetch external JSON
-  fetch('phrases.json')
-    .then(res => res.json())
-    .then(data => {
-      PHRASES = data;
-      initUI();
+
+  function initializeApp() {
+    const elements = {
+      fromLang: document.getElementById('fromLang'),
+      toLang: document.getElementById('toLang'),
+      searchInput: document.getElementById('searchInput'),
+      categories: document.getElementById('categories'),
+      resultsBody: document.getElementById('resultsBody'),
+      emptyState: document.getElementById('emptyState'),
+      fromLangDisplay: document.getElementById('fromLangDisplay'),
+      toLangDisplay: document.getElementById('toLangDisplay'),
+      showAllToggle: document.getElementById('showAllToggle'),
+      stats: document.getElementById('stats'),
+      clearBtn: document.getElementById('clearBtn'),
+      randomBtn: document.getElementById('randomBtn')
+    };
+
+    // Populate language selectors
+    LANGUAGES.forEach(lang => {
+      elements.fromLang.add(new Option(lang.name, lang.code));
+      elements.toLang.add(new Option(lang.name, lang.code));
+    });
+    
+    elements.fromLang.value = 'en';
+    elements.toLang.value = 'es';
+
+    // Create category chips
+    CATEGORIES.forEach(category => {
+      const chip = document.createElement('div');
+      chip.className = 'category-chip';
+      chip.textContent = category;
+      chip.dataset.category = category;
+      chip.addEventListener('click', () => toggleCategory(category));
+      elements.categories.appendChild(chip);
     });
 
-  function initUI(){
-    const $ = sel => document.querySelector(sel);
-    const fromSel = $('#fromLang');
-    const toSel = $('#toLang');
-    const q = $('#q');
-    const chips = $('#chips');
-    const tbody = $('#tbody');
-    const empty = $('#empty');
-    const fromTag = $('#fromTag');
-    const toTag = $('#toTag');
-    const showAll = $('#showAll');
-    const stat = $('#stat');
+    // Event listeners
+    elements.fromLang.addEventListener('change', renderResults);
+    elements.toLang.addEventListener('change', renderResults);
+    elements.searchInput.addEventListener('input', debounce(renderResults, 300));
+    elements.showAllToggle.addEventListener('change', renderResults);
+    elements.clearBtn.addEventListener('click', clearFilters);
+    elements.randomBtn.addEventListener('click', showRandomPhrase);
 
-    LANGS.forEach(l => {
-      const o1 = new Option(`${l.name} (${l.code})`, l.code); fromSel.add(o1);
-      const o2 = new Option(`${l.name} (${l.code})`, l.code); toSel.add(o2);
-    });
-    fromSel.value = 'en';
-    toSel.value = 'es';
-
-    let activeCats = new Set();
-    CATS.forEach(c => {
-      const el = document.createElement('div');
-      el.className = 'chip'; el.textContent = c; el.dataset.cat = c;
-      el.onclick = () => { if(activeCats.has(c)) activeCats.delete(c); else activeCats.add(c); el.classList.toggle('active'); render(); };
-      chips.appendChild(el);
-    });
-
-    [fromSel, toSel].forEach(s => s.addEventListener('change', render));
-    q.addEventListener('input', debounce(render, 80));
-    showAll.addEventListener('change', render);
-    $('#clearFilters').onclick = () => { q.value=''; activeCats.clear(); chips.querySelectorAll('.chip.active').forEach(e=>e.classList.remove('active')); render(); };
-    $('#randomBtn').onclick = () => { const idx = Math.floor(Math.random()*PHRASES.length); const p = PHRASES[idx]; q.value = ''; activeCats = new Set([p.cat]); chips.querySelectorAll('.chip').forEach(el=>{ el.classList.toggle('active', el.dataset.cat===p.cat);}); render(p.id); };
-
-    function debounce(fn,ms){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a),ms); } }
-
-    function render(scrollToId=null){
-      const from = fromSel.value; const to = toSel.value;
-      fromTag.textContent = `(${from.toUpperCase()})`;
-      toTag.textContent = showAll.checked? '(all)' : `(${to.toUpperCase()})`;
-
-      const qtxt = q.value.trim().toLowerCase();
-      let filtered = PHRASES.filter(p => {
-        if(activeCats.size && !activeCats.has(p.cat)) return false;
-        if(!qtxt) return true;
-        const hay = [p.t.en, p.t[from], p.t[to], ...Object.values(p.t)].filter(Boolean).join(' ').toLowerCase();
-        return hay.includes(qtxt);
-      });
-
-      stat.textContent = `${filtered.length} of ${PHRASES.length} phrases`;
-
-      tbody.innerHTML = '';
-      if(!filtered.length){ empty.style.display='block'; return; } else empty.style.display='none';
-
-      filtered.forEach(p => {
-        const tr = document.createElement('tr');
-        const tdCat = document.createElement('td'); tdCat.textContent = p.cat; tr.appendChild(tdCat);
-
-        const tdFrom = document.createElement('td');
-        tdFrom.innerHTML = `<div class="big">${esc(p.t[from]||p.t.en)}</div><div class="langTag">${p.t.en}</div>`;
-        tr.appendChild(tdFrom);
-
-        const tdTo = document.createElement('td');
-        if(showAll.checked){
-          tdTo.innerHTML = LANGS.filter(l=>l.code!==from).map(l=>{
-            return `<div style="margin-bottom:6px"><div class="langTag">${l.name} (${l.code})</div><div class="big">${esc(p.t[l.code]||'—')}</div></div>`
-          }).join('');
-        } else {
-          tdTo.innerHTML = `<div class="big">${esc(p.t[to]||'—')}</div>`;
-        }
-        tr.appendChild(tdTo);
-
-        const tdTools = document.createElement('td');
-        const btns = document.createElement('div'); btns.className='rowtools';
-        btns.appendChild(iconBtn('🔊', 'Speak (from)', ()=>ttsSpeak(p.t[from]||p.t.en, from)));
-        btns.appendChild(iconBtn('🔊', 'Speak (to)', ()=> {
-          if(showAll.checked){
-            LANGS.filter(l=>l.code!==from).forEach(l=>ttsSpeak(p.t[l.code], l.code));
-          } else ttsSpeak(p.t[to], to);
-        }));
-        btns.appendChild(iconBtn('📋', 'Copy translation', ()=>{
-          const str = showAll.checked ? LANGS.filter(l=>l.code!==from).map(l=>`${l.name}: ${p.t[l.code]||''}`).join('\n') : (p.t[to]||'');
-          copy(str);
-        }));
-        tdTools.appendChild(btns); tr.appendChild(tdTools);
-        tbody.appendChild(tr);
-
-        if(scrollToId && p.id===scrollToId){ tr.scrollIntoView({behavior:'smooth', block:'center'}); }
-      });
-    }
-
-    function iconBtn(symbol, title, onClick){ const b=document.createElement('button'); b.className='icon'; b.textContent=symbol+" "+title; b.onclick=onClick; return b; }
-    function esc(s){ return (s||'').replace(/[&<>]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])); }
-    function copy(text){ if(!text) return; navigator.clipboard?.writeText(text); }
-
-    function ttsSpeak(text, langCode){
-      if(!text) return;
-      const u = new SpeechSynthesisUtterance(text);
-      const meta = LANGS.find(l=>l.code===langCode);
-      if(meta) u.lang = meta.tts;
-      speechSynthesis.cancel();
-      speechSynthesis.speak(u);
-    }
-
-    render();
+    renderResults();
   }
+
+  function toggleCategory(category) {
+    const chip = document.querySelector(`[data-category="${category}"]`);
+    
+    if (activeCategories.has(category)) {
+      activeCategories.delete(category);
+      chip.classList.remove('active');
+    } else {
+      activeCategories.add(category);
+      chip.classList.add('active');
+    }
+    
+    renderResults();
+  }
+
+  function clearFilters() {
+    activeCategories.clear();
+    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.category-chip.active').forEach(chip => {
+      chip.classList.remove('active');
+    });
+    renderResults();
+  }
+
+  function showRandomPhrase() {
+    const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+    activeCategories.clear();
+    activeCategories.add(randomPhrase.cat);
+    
+    document.getElementById('searchInput').value = '';
+    document.querySelectorAll('.category-chip').forEach(chip => {
+      chip.classList.toggle('active', chip.dataset.category === randomPhrase.cat);
+    });
+    
+    renderResults(randomPhrase.id);
+  }
+
+  function renderResults(highlightId = null) {
+    const fromLang = document.getElementById('fromLang').value;
+    const toLang = document.getElementById('toLang').value;
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+    const showAll = document.getElementById('showAllToggle').checked;
+
+    // Update language displays
+    document.getElementById('fromLangDisplay').textContent = `(${fromLang.toUpperCase()})`;
+    document.getElementById('toLangDisplay').textContent = showAll ? '(ALL)' : `(${toLang.toUpperCase()})`;
+
+    // Filter phrases
+    let filtered = phrases.filter(phrase => {
+      // Category filter
+      if (activeCategories.size > 0 && !activeCategories.has(phrase.cat)) {
+        return false;
+      }
+
+      // Search filter
+      if (searchTerm) {
+        const searchableText = [
+          phrase.t.en,
+          phrase.t[fromLang],
+          phrase.t[toLang],
+          ...Object.values(phrase.t)
+        ].filter(Boolean).join(' ').toLowerCase();
+        
+        return searchableText.includes(searchTerm);
+      }
+
+      return true;
+    });
+
+    // Update stats
+    document.getElementById('stats').textContent = `${filtered.length} of ${phrases.length} phrases`;
+
+    const resultsBody = document.getElementById('resultsBody');
+    const emptyState = document.getElementById('emptyState');
+
+    if (filtered.length === 0) {
+      resultsBody.innerHTML = '';
+      emptyState.style.display = 'block';
+      return;
+    }
+
+    emptyState.style.display = 'none';
+    resultsBody.innerHTML = '';
+
+    filtered.forEach(phrase => {
+      const row = createPhraseRow(phrase, fromLang, toLang, showAll);
+      resultsBody.appendChild(row);
+
+      if (highlightId === phrase.id) {
+        setTimeout(() => {
+          row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    });
+  }
+
+  function createPhraseRow(phrase, fromLang, toLang, showAll) {
+    const row = document.createElement('tr');
+
+    // Category cell
+    const categoryCell = document.createElement('td');
+    categoryCell.innerHTML = `<span class="category-tag">${escapeHtml(phrase.cat)}</span>`;
+    row.appendChild(categoryCell);
+
+    // From language cell
+    const fromCell = document.createElement('td');
+    fromCell.innerHTML = `
+      <div class="phrase-main">${escapeHtml(phrase.t[fromLang] || phrase.t.en)}</div>
+      <div class="phrase-sub">${escapeHtml(phrase.t.en)}</div>
+    `;
+    row.appendChild(fromCell);
+
+    // To language cell
+    const toCell = document.createElement('td');
+    if (showAll) {
+      const translations = LANGUAGES
+        .filter(lang => lang.code !== fromLang)
+        .map(lang => `
+          <div style="margin-bottom: 0.5rem;">
+            <div class="phrase-sub">${lang.name}</div>
+            <div class="phrase-main">${escapeHtml(phrase.t[lang.code] || '—')}</div>
+          </div>
+        `).join('');
+      toCell.innerHTML = translations;
+    } else {
+      toCell.innerHTML = `<div class="phrase-main">${escapeHtml(phrase.t[toLang] || '—')}</div>`;
+    }
+    row.appendChild(toCell);
+
+    // Actions cell
+    const actionsCell = document.createElement('td');
+    const actionsDiv = document.createElement('div');
+    actionsDiv.className = 'action-buttons';
+
+    // Speak from language
+    const speakFromBtn = document.createElement('button');
+    speakFromBtn.className = 'btn-icon';
+    speakFromBtn.innerHTML = '🔊';
+    speakFromBtn.title = 'Speak source';
+    speakFromBtn.onclick = () => speak(phrase.t[fromLang] || phrase.t.en, fromLang);
+    actionsDiv.appendChild(speakFromBtn);
+
+    // Speak to language(s)
+    const speakToBtn = document.createElement('button');
+    speakToBtn.className = 'btn-icon';
+    speakToBtn.innerHTML = '🗣️';
+    speakToBtn.title = 'Speak translation';
+    speakToBtn.onclick = () => {
+      if (showAll) {
+        LANGUAGES.filter(lang => lang.code !== fromLang).forEach(lang => {
+          if (phrase.t[lang.code]) {
+            speak(phrase.t[lang.code], lang.code);
+          }
+        });
+      } else {
+        speak(phrase.t[toLang], toLang);
+      }
+    };
+    actionsDiv.appendChild(speakToBtn);
+
+    // Copy translation
+    const copyBtn = document.createElement('button');
+    copyBtn.className = 'btn-icon';
+    copyBtn.innerHTML = '📋';
+    copyBtn.title = 'Copy translation';
+    copyBtn.onclick = () => {
+      const textToCopy = showAll 
+        ? LANGUAGES.filter(lang => lang.code !== fromLang)
+            .map(lang => `${lang.name}: ${phrase.t[lang.code] || ''}`)
+            .join('\n')
+        : phrase.t[toLang] || '';
+      
+      copyToClipboard(textToCopy);
+      
+      // Visual feedback
+      copyBtn.innerHTML = '✅';
+      setTimeout(() => {
+        copyBtn.innerHTML = '📋';
+      }, 1000);
+    };
+    actionsDiv.appendChild(copyBtn);
+
+    actionsCell.appendChild(actionsDiv);
+    row.appendChild(actionsCell);
+
+    return row;
+  }
+
+  function speak(text, languageCode) {
+    if (!text) return;
+    
+    const utterance = new SpeechSynthesisUtterance(text);
+    const language = LANGUAGES.find(lang => lang.code === languageCode);
+    
+    if (language) {
+      utterance.lang = language.tts;
+    }
+    
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utterance);
+  }
+
+  function copyToClipboard(text) {
+    if (!text) return;
+    
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).catch(err => {
+        console.warn('Failed to copy text:', err);
+      });
+    } else {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      textArea.style.top = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.warn('Failed to copy text:', err);
+      }
+      
+      document.body.removeChild(textArea);
+    }
+  }
+
+  function escapeHtml(text) {
+    const map = {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#039;'
+    };
+    
+    return (text || '').replace(/[&<>"']/g, char => map[char]);
+  }
+
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  // Load external phrases.json if it exists, otherwise use mock data
+  fetch('phrases.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('phrases.json not found');
+      }
+      return response.json();
+    })
+    .then(data => {
+      phrases = data;
+      initializeApp();
+    })
+    .catch(error => {
+      console.info('Using mock data as phrases.json not found:', error.message);
+      // Mock data is already set above
+    });
 </script>
 </body>
 </html>
