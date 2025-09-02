@@ -46,6 +46,98 @@
     overflow-x: hidden;
   }
   
+/* Let long words/phrases wrap instead of forcing the row wide */
+.phrase-main,
+.phrase-sub {
+  word-break: break-word;
+}
+
+/* Safety: if the table ever overflows, don't clip the buttons */
+.results-section {
+  overflow-x: visible;
+}
+
+/* Mobile: turn each table row into a card with stacked fields */
+@media (max-width: 768px) {
+  .results-section { padding: 0.5rem 1rem 1rem; }
+
+  .results-table {
+    border-spacing: 0;              /* tighter cards */
+    width: 100%;
+  }
+
+  .results-table thead {
+    display: none;                   /* hide header on mobile */
+  }
+
+  .results-table tbody tr {
+    display: block;                  /* card */
+    background: var(--surface-elevated);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    margin-bottom: 0.75rem;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+
+  /* first cell (category) as the card header */
+  .results-table tbody td:first-child {
+    display: block;
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    padding: 0.75rem 1rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+
+  /* other cells stack with labels */
+  .results-table tbody td {
+    display: grid;
+    grid-template-columns: 110px 1fr; /* label | value */
+    align-items: start;
+    gap: 0.5rem 0.75rem;
+    border: 0;
+    padding: 0.75rem 1rem;
+  }
+
+  /* Add pseudo-labels matching your columns */
+  .results-table tbody td:nth-child(2)::before { 
+    content: "From"; 
+    color: var(--text-muted); 
+    font-size: 0.75rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .results-table tbody td:nth-child(3)::before { 
+    content: "To"; 
+    color: var(--text-muted); 
+    font-size: 0.75rem; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Actions row */
+  .results-table tbody td:last-child {
+    display: block;
+    border-top: 1px dashed var(--border);
+    padding-top: 0.5rem;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;                 /* wrap buttons instead of pushing off-screen */
+    gap: 0.5rem;
+  }
+
+  .btn-icon {
+    width: 2.25rem;                  /* slightly smaller buttons on mobile */
+    height: 2.25rem;
+  }
+}
+  
   /* Animated background elements */
   body::before {
     content: '';
