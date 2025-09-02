@@ -539,10 +539,2169 @@
       "en": "Elderly",
       "es": "Anciano",
       "pt": "Idoso",
-      "fr": "Âgé",
+      "fr": "Personne âgée",
       "it": "Anziano",
       "ru": "Пожилой",
       "de": "Älterer Mensch"
     }
+  },
+  {
+    "id": "medical_43",
+    "cat": "Medical",
+    "t": {
+      "en": "Medicine",
+      "es": "Medicina",
+      "pt": "Medicina",
+      "fr": "Médicament",
+      "it": "Medicina",
+      "ru": "Лекарство",
+      "de": "Medizin"
+    }
+  },
+  {
+    "id": "medical_44",
+    "cat": "Medical",
+    "t": {
+      "en": "Antibiotic",
+      "es": "Antibiótico",
+      "pt": "Antibiótico",
+      "fr": "Antibiotique",
+      "it": "Antibiotico",
+      "ru": "Антибиотик",
+      "de": "Antibiotikum"
+    }
+  },
+  {
+    "id": "medical_45",
+    "cat": "Medical",
+    "t": {
+      "en": "Aspirin",
+      "es": "Aspirina",
+      "pt": "Aspirina",
+      "fr": "Aspirine",
+      "it": "Aspirina",
+      "ru": "Аспирин",
+      "de": "Aspirin"
+    }
+  },
+    {
+    "id": "family_and_people_93",
+    "cat": "Family & People",
+    "t": {
+      "en": "Mother",
+      "es": "Madre",
+      "pt": "Mãe",
+      "fr": "Mère",
+      "it": "Madre",
+      "ru": "Мать",
+      "de": "Mutter"
+    }
+  },
+  {
+    "id": "family_and_people_94",
+    "cat": "Family & People",
+    "t": {
+      "en": "Father",
+      "es": "Padre",
+      "pt": "Pai",
+      "fr": "Père",
+      "it": "Padre",
+      "ru": "Отец",
+      "de": "Vater"
+    }
+  },
+  {
+    "id": "family_and_people_95",
+    "cat": "Family & People",
+    "t": {
+      "en": "Brother",
+      "es": "Hermano",
+      "pt": "Irmão",
+      "fr": "Frère",
+      "it": "Fratello",
+      "ru": "Брат",
+      "de": "Bruder"
+    }
+  },
+  {
+    "id": "family_and_people_96",
+    "cat": "Family & People",
+    "t": {
+      "en": "Sister",
+      "es": "Hermana",
+      "pt": "Irmã",
+      "fr": "Sœur",
+      "it": "Sorella",
+      "ru": "Сестра",
+      "de": "Schwester"
+    }
+  },
+  {
+    "id": "family_and_people_97",
+    "cat": "Family & People",
+    "t": {
+      "en": "Son",
+      "es": "Hijo",
+      "pt": "Filho",
+      "fr": "Fils",
+      "it": "Figlio",
+      "ru": "Сын",
+      "de": "Sohn"
+    }
+  },
+  {
+    "id": "family_and_people_98",
+    "cat": "Family & People",
+    "t": {
+      "en": "Daughter",
+      "es": "Hija",
+      "pt": "Filha",
+      "fr": "Fille",
+      "it": "Figlia",
+      "ru": "Дочь",
+      "de": "Tochter"
+    }
+  },
+  {
+    "id": "family_and_people_99",
+    "cat": "Family & People",
+    "t": {
+      "en": "Uncle",
+      "es": "Tío",
+      "pt": "Tio",
+      "fr": "Oncle",
+      "it": "Zio",
+      "ru": "Дядя",
+      "de": "Onkel"
+    }
+  },
+  {
+    "id": "family_and_people_100",
+    "cat": "Family & People",
+    "t": {
+      "en": "Aunt",
+      "es": "Tía",
+      "pt": "Tia",
+      "fr": "Tante",
+      "it": "Zia",
+      "ru": "Тётя",
+      "de": "Tante"
+    }
+  },
+  {
+    "id": "family_and_people_101",
+    "cat": "Family & People",
+    "t": {
+      "en": "Cousin",
+      "es": "Primo",
+      "pt": "Primo",
+      "fr": "Cousin",
+      "it": "Cugino",
+      "ru": "Кузен",
+      "de": "Cousin"
+    }
+  },
+  {
+    "id": "family_and_people_102",
+    "cat": "Family & People",
+    "t": {
+      "en": "Grandmother",
+      "es": "Abuela",
+      "pt": "Avó",
+      "fr": "Grand-mère",
+      "it": "Nonna",
+      "ru": "Бабушка",
+      "de": "Großmutter"
+    }
+  },
+  {
+    "id": "family_and_people_103",
+    "cat": "Family & People",
+    "t": {
+      "en": "Grandfather",
+      "es": "Abuelo",
+      "pt": "Avô",
+      "fr": "Grand-père",
+      "it": "Nonno",
+      "ru": "Дедушка",
+      "de": "Großvater"
+    }
+  },
+  {
+    "id": "family_and_people_104",
+    "cat": "Family & People",
+    "t": {
+      "en": "Relative",
+      "es": "Pariente",
+      "pt": "Parente",
+      "fr": "Parent",
+      "it": "Parente",
+      "ru": "Родственник",
+      "de": "Verwandter"
+    }
+  },
+  {
+    "id": "tools_and_equipment_105",
+    "cat": "Tools & Equipment",
+    "t": {
+      "en": "Hammer",
+      "es": "Martillo",
+      "pt": "Martelo",
+      "fr": "Marteau",
+      "it": "Martello",
+      "ru": "Молоток",
+      "de": "Hammer"
+    }
+  },
+  {
+    "id": "tools_and_equipment_106",
+    "cat": "Tools & Equipment",
+    "t": {
+      "en": "Wrench",
+      "es": "Llave inglesa",
+      "pt": "Chave inglesa",
+      "fr": "Clé",
+      "it": "Chiave inglese",
+      "ru": "Гаечный ключ",
+      "de": "Schraubenschlüssel"
+    }
+  },
+  {
+    "id": "tools_and_equipment_107",
+    "cat": "Tools & Equipment",
+    "t": {
+      "en": "Saw",
+      "es": "Sierra",
+      "pt": "Serra",
+      "fr": "Scie",
+      "it": "Sega",
+      "ru": "Пила",
+      "de": "Säge"
+    }
+  },
+  {
+    "id": "tools_and_equipment_108",
+    "cat": "Tools & Equipment",
+    "t": {
+      "en": "Screwdriver",
+      "es": "Destornillador",
+      "pt": "Chave de fenda",
+      "fr": "Tournevis",
+      "it": "Cacciavite",
+      "ru": "Отвёртка",
+      "de": "Schraubenzieher"
+    }
+  },
+  {
+    "id": "tools_and_equipment_109",
+    "cat": "Tools & Equipment",
+    "t": {
+      "en": "Pliers",
+      "es": "Alicates",
+      "pt": "Alicate",
+      "fr": "Pince",
+      "it": "Pinza",
+      "ru": "Плоскогубцы",
+      "de": "Zange"
+    }
+  },
+  {
+    "id": "tools_and_equipment_110",
+    "cat": "Tools & Equipment",
+    "t": {
+      "en": "Drill",
+      "es": "Taladro",
+      "pt": "Furadeira",
+      "fr": "Perceuse",
+      "it": "Trapano",
+      "ru": "Дрель",
+      "de": "Bohrer"
+    }
+  },
+  {
+    "id": "clothes_111",
+    "cat": "Clothes",
+    "t": {
+      "en": "Shirt",
+      "es": "Camisa",
+      "pt": "Camisa",
+      "fr": "Chemise",
+      "it": "Camicia",
+      "ru": "Рубашка",
+      "de": "Hemd"
+    }
+  },
+  {
+    "id": "clothes_112",
+    "cat": "Clothes",
+    "t": {
+      "en": "Pants",
+      "es": "Pantalones",
+      "pt": "Calças",
+      "fr": "Pantalon",
+      "it": "Pantaloni",
+      "ru": "Брюки",
+      "de": "Hose"
+    }
+  },
+  {
+    "id": "clothes_113",
+    "cat": "Clothes",
+    "t": {
+      "en": "Shoes",
+      "es": "Zapatos",
+      "pt": "Sapatos",
+      "fr": "Chaussures",
+      "it": "Scarpe",
+      "ru": "Туфли",
+      "de": "Schuhe"
+    }
+  },
+  {
+    "id": "clothes_114",
+    "cat": "Clothes",
+    "t": {
+      "en": "Boots",
+      "es": "Botas",
+      "pt": "Botas",
+      "fr": "Bottes",
+      "it": "Stivali",
+      "ru": "Ботинки",
+      "de": "Stiefel"
+    }
+  },
+  {
+    "id": "clothes_115",
+    "cat": "Clothes",
+    "t": {
+      "en": "Jacket",
+      "es": "Chaqueta",
+      "pt": "Jaqueta",
+      "fr": "Veste",
+      "it": "Giacca",
+      "ru": "Куртка",
+      "de": "Jacke"
+    }
+  },
+  {
+    "id": "clothes_116",
+    "cat": "Clothes",
+    "t": {
+      "en": "Coat",
+      "es": "Abrigo",
+      "pt": "Casaco",
+      "fr": "Manteau",
+      "it": "Cappotto",
+      "ru": "Пальто",
+      "de": "Mantel"
+    }
+  },
+  {
+    "id": "clothes_117",
+    "cat": "Clothes",
+    "t": {
+      "en": "Hat",
+      "es": "Sombrero",
+      "pt": "Chapéu",
+      "fr": "Chapeau",
+      "it": "Cappello",
+      "ru": "Шляпа",
+      "de": "Hut"
+    }
+  },
+  {
+    "id": "clothes_118",
+    "cat": "Clothes",
+    "t": {
+      "en": "Gloves",
+      "es": "Guantes",
+      "pt": "Luvas",
+      "fr": "Gants",
+      "it": "Guanti",
+      "ru": "Перчатки",
+      "de": "Handschuhe"
+    }
+  },
+  {
+    "id": "clothes_119",
+    "cat": "Clothes",
+    "t": {
+      "en": "Socks",
+      "es": "Calcetines",
+      "pt": "Meias",
+      "fr": "Chaussettes",
+      "it": "Calzini",
+      "ru": "Носки",
+      "de": "Socken"
+    }
+  },
+  {
+    "id": "clothes_120",
+    "cat": "Clothes",
+    "t": {
+      "en": "Belt",
+      "es": "Cinturón",
+      "pt": "Cinto",
+      "fr": "Ceinture",
+      "it": "Cintura",
+      "ru": "Ремень",
+      "de": "Gürtel"
+    }
+  },
+  {
+    "id": "directions_22",
+    "cat": "Directions",
+    "t": {
+      "en": "North",
+      "es": "Norte",
+      "pt": "Norte",
+      "fr": "Nord",
+      "it": "Nord",
+      "ru": "Север",
+      "de": "Norden"
+    }
+  },
+  {
+    "id": "directions_23",
+    "cat": "Directions",
+    "t": {
+      "en": "South",
+      "es": "Sur",
+      "pt": "Sul",
+      "fr": "Sud",
+      "it": "Sud",
+      "ru": "Юг",
+      "de": "Süden"
+    }
+  },
+  {
+    "id": "directions_24",
+    "cat": "Directions",
+    "t": {
+      "en": "East",
+      "es": "Este",
+      "pt": "Leste",
+      "fr": "Est",
+      "it": "Est",
+      "ru": "Восток",
+      "de": "Osten"
+    }
+  },
+  {
+    "id": "directions_25",
+    "cat": "Directions",
+    "t": {
+      "en": "West",
+      "es": "Oeste",
+      "pt": "Oeste",
+      "fr": "Ouest",
+      "it": "Ovest",
+      "ru": "Запад",
+      "de": "Westen"
+    }
+  },
+  {
+    "id": "directions_26",
+    "cat": "Directions",
+    "t": {
+      "en": "Turn",
+      "es": "Girar",
+      "pt": "Virar",
+      "fr": "Tourner",
+      "it": "Girare",
+      "ru": "Повернуть",
+      "de": "Abbiegen"
+    }
+  },
+  {
+    "id": "directions_27",
+    "cat": "Directions",
+    "t": {
+      "en": "Stop",
+      "es": "Alto",
+      "pt": "Parar",
+      "fr": "Arrêt",
+      "it": "Fermare",
+      "ru": "Стоп",
+      "de": "Stopp"
+    }
+  },
+  {
+    "id": "directions_28",
+    "cat": "Directions",
+    "t": {
+      "en": "Road",
+      "es": "Carretera",
+      "pt": "Estrada",
+      "fr": "Route",
+      "it": "Strada",
+      "ru": "Дорога",
+      "de": "Straße"
+    }
+  },
+  {
+    "id": "directions_29",
+    "cat": "Directions",
+    "t": {
+      "en": "Bridge",
+      "es": "Puente",
+      "pt": "Ponte",
+      "fr": "Pont",
+      "it": "Ponte",
+      "ru": "Мост",
+      "de": "Brücke"
+    }
+  },
+  {
+    "id": "directions_30",
+    "cat": "Directions",
+    "t": {
+      "en": "River",
+      "es": "Río",
+      "pt": "Rio",
+      "fr": "Rivière",
+      "it": "Fiume",
+      "ru": "Река",
+      "de": "Fluss"
+    }
+  },
+  {
+    "id": "directions_31",
+    "cat": "Directions",
+    "t": {
+      "en": "Mountain",
+      "es": "Montaña",
+      "pt": "Montanha",
+      "fr": "Montagne",
+      "it": "Montagna",
+      "ru": "Гора",
+      "de": "Berg"
+    }
+  },
+    {
+    "id": "weather_36",
+    "cat": "Weather",
+    "t": {
+      "en": "Hurricane",
+      "es": "Huracán",
+      "pt": "Furacão",
+      "fr": "Ouragan",
+      "it": "Uragano",
+      "ru": "Ураган",
+      "de": "Hurrikan"
+    }
+  },
+  {
+    "id": "weather_37",
+    "cat": "Weather",
+    "t": {
+      "en": "Tornado",
+      "es": "Tornado",
+      "pt": "Tornado",
+      "fr": "Tornade",
+      "it": "Tornado",
+      "ru": "Торнадо",
+      "de": "Tornado"
+    }
+  },
+  {
+    "id": "weather_38",
+    "cat": "Weather",
+    "t": {
+      "en": "Monsoon",
+      "es": "Monzón",
+      "pt": "Monção",
+      "fr": "Mousson",
+      "it": "Monsone",
+      "ru": "Муссон",
+      "de": "Monsun"
+    }
+  },
+  {
+    "id": "weather_39",
+    "cat": "Weather",
+    "t": {
+      "en": "Thunderstorm",
+      "es": "Tormenta eléctrica",
+      "pt": "Trovoada",
+      "fr": "Orage",
+      "it": "Temporale",
+      "ru": "Гроза",
+      "de": "Gewitter"
+    }
+  },
+  {
+    "id": "weather_40",
+    "cat": "Weather",
+    "t": {
+      "en": "Lightning",
+      "es": "Relámpago",
+      "pt": "Relâmpago",
+      "fr": "Éclair",
+      "it": "Fulmine",
+      "ru": "Молния",
+      "de": "Blitz"
+    }
+  },
+  {
+    "id": "weather_41",
+    "cat": "Weather",
+    "t": {
+      "en": "Thunder",
+      "es": "Trueno",
+      "pt": "Trovão",
+      "fr": "Tonnerre",
+      "it": "Tuono",
+      "ru": "Гром",
+      "de": "Donner"
+    }
+  },
+  {
+    "id": "weather_42",
+    "cat": "Weather",
+    "t": {
+      "en": "Hail",
+      "es": "Granizo",
+      "pt": "Granizo",
+      "fr": "Grêle",
+      "it": "Grandine",
+      "ru": "Град",
+      "de": "Hagel"
+    }
+  },
+  {
+    "id": "weather_43",
+    "cat": "Weather",
+    "t": {
+      "en": "Wind",
+      "es": "Viento",
+      "pt": "Vento",
+      "fr": "Vent",
+      "it": "Vento",
+      "ru": "Ветер",
+      "de": "Wind"
+    }
+  },
+  {
+    "id": "weather_44",
+    "cat": "Weather",
+    "t": {
+      "en": "Fog",
+      "es": "Niebla",
+      "pt": "Nevoeiro",
+      "fr": "Brouillard",
+      "it": "Nebbia",
+      "ru": "Туман",
+      "de": "Nebel"
+    }
+  },
+  {
+    "id": "weather_45",
+    "cat": "Weather",
+    "t": {
+      "en": "Mist",
+      "es": "Bruma",
+      "pt": "Névoa",
+      "fr": "Brume",
+      "it": "Foschia",
+      "ru": "Дымка",
+      "de": "Dunst"
+    }
+  },
+  {
+    "id": "weather_46",
+    "cat": "Weather",
+    "t": {
+      "en": "Humidity",
+      "es": "Humedad",
+      "pt": "Umidade",
+      "fr": "Humidité",
+      "it": "Umidità",
+      "ru": "Влажность",
+      "de": "Luftfeuchtigkeit"
+    }
+  },
+  {
+    "id": "weather_47",
+    "cat": "Weather",
+    "t": {
+      "en": "Drought",
+      "es": "Sequía",
+      "pt": "Seca",
+      "fr": "Sécheresse",
+      "it": "Siccità",
+      "ru": "Засуха",
+      "de": "Dürre"
+    }
+  },
+  {
+    "id": "weather_48",
+    "cat": "Weather",
+    "t": {
+      "en": "Heatwave",
+      "es": "Ola de calor",
+      "pt": "Onda de calor",
+      "fr": "Canicule",
+      "it": "Ondata di calore",
+      "ru": "Волна жары",
+      "de": "Hitzewelle"
+    }
+  },
+  {
+    "id": "weather_49",
+    "cat": "Weather",
+    "t": {
+      "en": "Cold wave",
+      "es": "Ola de frío",
+      "pt": "Onda de frio",
+      "fr": "Vague de froid",
+      "it": "Ondata di freddo",
+      "ru": "Холодная волна",
+      "de": "Kältewelle"
+    }
+  },
+  {
+    "id": "weather_50",
+    "cat": "Weather",
+    "t": {
+      "en": "Cold front",
+      "es": "Frente frío",
+      "pt": "Frente fria",
+      "fr": "Front froid",
+      "it": "Fronte freddo",
+      "ru": "Холодный фронт",
+      "de": "Kaltfront"
+    }
+  },
+  {
+    "id": "weather_51",
+    "cat": "Weather",
+    "t": {
+      "en": "Storm",
+      "es": "Tormenta",
+      "pt": "Tempestade",
+      "fr": "Tempête",
+      "it": "Tempesta",
+      "ru": "Шторм",
+      "de": "Sturm"
+    }
+  },
+  {
+    "id": "weather_52",
+    "cat": "Weather",
+    "t": {
+      "en": "Blizzard",
+      "es": "Ventisca",
+      "pt": "Nevasca",
+      "fr": "Tempête de neige",
+      "it": "Bufera di neve",
+      "ru": "Метель",
+      "de": "Schneesturm"
+    }
+  },
+  {
+    "id": "weather_53",
+    "cat": "Weather",
+    "t": {
+      "en": "Sleet",
+      "es": "Aguanieve",
+      "pt": "Aguaneve",
+      "fr": "Neige fondue",
+      "it": "Nevischio",
+      "ru": "Мокрый снег",
+      "de": "Schneeregen"
+    }
+  },
+  {
+    "id": "weather_54",
+    "cat": "Weather",
+    "t": {
+      "en": "Drizzle",
+      "es": "Llovizna",
+      "pt": "Chuvisco",
+      "fr": "Bruine",
+      "it": "Pioviggine",
+      "ru": "Морось",
+      "de": "Nieselregen"
+    }
+  },
+  {
+    "id": "weather_55",
+    "cat": "Weather",
+    "t": {
+      "en": "Dust storm",
+      "es": "Tormenta de polvo",
+      "pt": "Tempestade de poeira",
+      "fr": "Tempête de poussière",
+      "it": "Tempesta di polvere",
+      "ru": "Пылевая буря",
+      "de": "Staubsturm"
+    }
+  },
+  {
+    "id": "weather_56",
+    "cat": "Weather",
+    "t": {
+      "en": "Sandstorm",
+      "es": "Tormenta de arena",
+      "pt": "Tempestade de areia",
+      "fr": "Tempête de sable",
+      "it": "Tempesta di sabbia",
+      "ru": "Песчаная буря",
+      "de": "Sandsturm"
+    }
+  },
+  {
+    "id": "weather_57",
+    "cat": "Weather",
+    "t": {
+      "en": "Wildfire smoke",
+      "es": "Humo de incendio forestal",
+      "pt": "Fumaça de incêndio florestal",
+      "fr": "Fumée d’incendie de forêt",
+      "it": "Fumo di incendio boschivo",
+      "ru": "Дым лесных пожаров",
+      "de": "Waldbrandrauch"
+    }
+  },
+  {
+    "id": "weather_58",
+    "cat": "Weather",
+    "t": {
+      "en": "Smog",
+      "es": "Smog",
+      "pt": "Smog",
+      "fr": "Smog",
+      "it": "Smog",
+      "ru": "Смог",
+      "de": "Smog"
+    }
+  },
+  {
+    "id": "weather_59",
+    "cat": "Weather",
+    "t": {
+      "en": "UV index",
+      "es": "Índice UV",
+      "pt": "Índice UV",
+      "fr": "Indice UV",
+      "it": "Indice UV",
+      "ru": "УФ-индекс",
+      "de": "UV-Index"
+    }
+  },
+    {
+    "id": "numbers_and_time_201",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "One",
+      "es": "Uno",
+      "pt": "Um",
+      "fr": "Un",
+      "it": "Uno",
+      "ru": "Один",
+      "de": "Eins"
+    }
+  },
+  {
+    "id": "numbers_and_time_202",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Two",
+      "es": "Dos",
+      "pt": "Dois",
+      "fr": "Deux",
+      "it": "Due",
+      "ru": "Два",
+      "de": "Zwei"
+    }
+  },
+  {
+    "id": "numbers_and_time_203",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Three",
+      "es": "Tres",
+      "pt": "Três",
+      "fr": "Trois",
+      "it": "Tre",
+      "ru": "Три",
+      "de": "Drei"
+    }
+  },
+  {
+    "id": "numbers_and_time_204",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Ten",
+      "es": "Diez",
+      "pt": "Dez",
+      "fr": "Dix",
+      "it": "Dieci",
+      "ru": "Десять",
+      "de": "Zehn"
+    }
+  },
+  {
+    "id": "numbers_and_time_205",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Hundred",
+      "es": "Cien",
+      "pt": "Cem",
+      "fr": "Cent",
+      "it": "Cento",
+      "ru": "Сто",
+      "de": "Hundert"
+    }
+  },
+  {
+    "id": "numbers_and_time_206",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Thousand",
+      "es": "Mil",
+      "pt": "Mil",
+      "fr": "Mille",
+      "it": "Mille",
+      "ru": "Тысяча",
+      "de": "Tausend"
+    }
+  },
+  {
+    "id": "numbers_and_time_207",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "What time is it?",
+      "es": "¿Qué hora es?",
+      "pt": "Que horas são?",
+      "fr": "Quelle heure est-il?",
+      "it": "Che ore sono?",
+      "ru": "Который час?",
+      "de": "Wie spät ist es?"
+    }
+  },
+  {
+    "id": "numbers_and_time_208",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Now",
+      "es": "Ahora",
+      "pt": "Agora",
+      "fr": "Maintenant",
+      "it": "Adesso",
+      "ru": "Сейчас",
+      "de": "Jetzt"
+    }
+  },
+  {
+    "id": "numbers_and_time_209",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Today",
+      "es": "Hoy",
+      "pt": "Hoje",
+      "fr": "Aujourd’hui",
+      "it": "Oggi",
+      "ru": "Сегодня",
+      "de": "Heute"
+    }
+  },
+  {
+    "id": "numbers_and_time_210",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Tomorrow",
+      "es": "Mañana",
+      "pt": "Amanhã",
+      "fr": "Demain",
+      "it": "Domani",
+      "ru": "Завтра",
+      "de": "Morgen"
+    }
+  },
+  {
+    "id": "numbers_and_time_211",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Yesterday",
+      "es": "Ayer",
+      "pt": "Ontem",
+      "fr": "Hier",
+      "it": "Ieri",
+      "ru": "Вчера",
+      "de": "Gestern"
+    }
+  },
+  {
+    "id": "numbers_and_time_212",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Morning",
+      "es": "Mañana",
+      "pt": "Manhã",
+      "fr": "Matin",
+      "it": "Mattina",
+      "ru": "Утро",
+      "de": "Morgen"
+    }
+  },
+  {
+    "id": "numbers_and_time_213",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Afternoon",
+      "es": "Tarde",
+      "pt": "Tarde",
+      "fr": "Après-midi",
+      "it": "Pomeriggio",
+      "ru": "День",
+      "de": "Nachmittag"
+    }
+  },
+  {
+    "id": "numbers_and_time_214",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Evening",
+      "es": "Noche",
+      "pt": "Noite",
+      "fr": "Soir",
+      "it": "Sera",
+      "ru": "Вечер",
+      "de": "Abend"
+    }
+  },
+  {
+    "id": "numbers_and_time_215",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Night",
+      "es": "Noche",
+      "pt": "Noite",
+      "fr": "Nuit",
+      "it": "Notte",
+      "ru": "Ночь",
+      "de": "Nacht"
+    }
+  },
+  {
+    "id": "numbers_and_time_216",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Week",
+      "es": "Semana",
+      "pt": "Semana",
+      "fr": "Semaine",
+      "it": "Settimana",
+      "ru": "Неделя",
+      "de": "Woche"
+    }
+  },
+  {
+    "id": "numbers_and_time_217",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Month",
+      "es": "Mes",
+      "pt": "Mês",
+      "fr": "Mois",
+      "it": "Mese",
+      "ru": "Месяц",
+      "de": "Monat"
+    }
+  },
+  {
+    "id": "numbers_and_time_218",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Year",
+      "es": "Año",
+      "pt": "Ano",
+      "fr": "An",
+      "it": "Anno",
+      "ru": "Год",
+      "de": "Jahr"
+    }
+  },
+  {
+    "id": "numbers_and_time_219",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Hour",
+      "es": "Hora",
+      "pt": "Hora",
+      "fr": "Heure",
+      "it": "Ora",
+      "ru": "Час",
+      "de": "Stunde"
+    }
+  },
+  {
+    "id": "numbers_and_time_220",
+    "cat": "Numbers & Time",
+    "t": {
+      "en": "Minute",
+      "es": "Minuto",
+      "pt": "Minuto",
+      "fr": "Minute",
+      "it": "Minuto",
+      "ru": "Минута",
+      "de": "Minute"
+    }
+  },
+    {
+    "id": "lodging_221",
+    "cat": "Lodging",
+    "t": {
+      "en": "Hotel",
+      "es": "Hotel",
+      "pt": "Hotel",
+      "fr": "Hôtel",
+      "it": "Hotel",
+      "ru": "Отель",
+      "de": "Hotel"
+    }
+  },
+  {
+    "id": "lodging_222",
+    "cat": "Lodging",
+    "t": {
+      "en": "Room",
+      "es": "Habitación",
+      "pt": "Quarto",
+      "fr": "Chambre",
+      "it": "Stanza",
+      "ru": "Комната",
+      "de": "Zimmer"
+    }
+  },
+  {
+    "id": "lodging_223",
+    "cat": "Lodging",
+    "t": {
+      "en": "Reservation",
+      "es": "Reserva",
+      "pt": "Reserva",
+      "fr": "Réservation",
+      "it": "Prenotazione",
+      "ru": "Бронирование",
+      "de": "Reservierung"
+    }
+  },
+  {
+    "id": "lodging_224",
+    "cat": "Lodging",
+    "t": {
+      "en": "Key",
+      "es": "Llave",
+      "pt": "Chave",
+      "fr": "Clé",
+      "it": "Chiave",
+      "ru": "Ключ",
+      "de": "Schlüssel"
+    }
+  },
+  {
+    "id": "lodging_225",
+    "cat": "Lodging",
+    "t": {
+      "en": "Bed",
+      "es": "Cama",
+      "pt": "Cama",
+      "fr": "Lit",
+      "it": "Letto",
+      "ru": "Кровать",
+      "de": "Bett"
+    }
+  },
+  {
+    "id": "lodging_226",
+    "cat": "Lodging",
+    "t": {
+      "en": "Bathroom",
+      "es": "Baño",
+      "pt": "Banheiro",
+      "fr": "Salle de bain",
+      "it": "Bagno",
+      "ru": "Ванная",
+      "de": "Badezimmer"
+    }
+  },
+  {
+    "id": "lodging_227",
+    "cat": "Lodging",
+    "t": {
+      "en": "Shower",
+      "es": "Ducha",
+      "pt": "Chuveiro",
+      "fr": "Douche",
+      "it": "Doccia",
+      "ru": "Душ",
+      "de": "Dusche"
+    }
+  },
+  {
+    "id": "lodging_228",
+    "cat": "Lodging",
+    "t": {
+      "en": "Check-in",
+      "es": "Registro",
+      "pt": "Check-in",
+      "fr": "Enregistrement",
+      "it": "Check-in",
+      "ru": "Регистрация",
+      "de": "Check-in"
+    }
+  },
+  {
+    "id": "lodging_229",
+    "cat": "Lodging",
+    "t": {
+      "en": "Check-out",
+      "es": "Salida",
+      "pt": "Check-out",
+      "fr": "Départ",
+      "it": "Check-out",
+      "ru": "Выезд",
+      "de": "Check-out"
+    }
+  },
+  {
+    "id": "lodging_230",
+    "cat": "Lodging",
+    "t": {
+      "en": "Reception",
+      "es": "Recepción",
+      "pt": "Recepção",
+      "fr": "Réception",
+      "it": "Reception",
+      "ru": "Ресепшен",
+      "de": "Rezeption"
+    }
+  },
+  {
+    "id": "lodging_231",
+    "cat": "Lodging",
+    "t": {
+      "en": "Guest",
+      "es": "Huésped",
+      "pt": "Hóspede",
+      "fr": "Client",
+      "it": "Ospite",
+      "ru": "Гость",
+      "de": "Gast"
+    }
+  },
+  {
+    "id": "lodging_232",
+    "cat": "Lodging",
+    "t": {
+      "en": "Hostel",
+      "es": "Hostal",
+      "pt": "Albergue",
+      "fr": "Auberge",
+      "it": "Ostello",
+      "ru": "Хостел",
+      "de": "Hostel"
+    }
+  },
+  {
+    "id": "lodging_233",
+    "cat": "Lodging",
+    "t": {
+      "en": "Inn",
+      "es": "Posada",
+      "pt": "Pousada",
+      "fr": "Auberge",
+      "it": "Locanda",
+      "ru": "Гостиница",
+      "de": "Gasthaus"
+    }
+  },
+  {
+    "id": "lodging_234",
+    "cat": "Lodging",
+    "t": {
+      "en": "Tent",
+      "es": "Tienda de campaña",
+      "pt": "Barraca",
+      "fr": "Tente",
+      "it": "Tenda",
+      "ru": "Палатка",
+      "de": "Zelt"
+    }
+  },
+  {
+    "id": "lodging_235",
+    "cat": "Lodging",
+    "t": {
+      "en": "Campground",
+      "es": "Campamento",
+      "pt": "Acampamento",
+      "fr": "Camping",
+      "it": "Campeggio",
+      "ru": "Кемпинг",
+      "de": "Campingplatz"
+    }
+  },
+    {
+    "id": "safety_236",
+    "cat": "Safety",
+    "t": {
+      "en": "Be careful",
+      "es": "Ten cuidado",
+      "pt": "Tenha cuidado",
+      "fr": "Fais attention",
+      "it": "Stai attento",
+      "ru": "Будь осторожен",
+      "de": "Sei vorsichtig"
+    }
+  },
+  {
+    "id": "safety_237",
+    "cat": "Safety",
+    "t": {
+      "en": "Watch out!",
+      "es": "¡Cuidado!",
+      "pt": "Cuidado!",
+      "fr": "Attention!",
+      "it": "Attento!",
+      "ru": "Осторожно!",
+      "de": "Achtung!"
+    }
+  },
+  {
+    "id": "safety_238",
+    "cat": "Safety",
+    "t": {
+      "en": "Stay back",
+      "es": "Mantente atrás",
+      "pt": "Fique para trás",
+      "fr": "Reculez",
+      "it": "Stai indietro",
+      "ru": "Отойди назад",
+      "de": "Bleib zurück"
+    }
+  },
+  {
+    "id": "safety_239",
+    "cat": "Safety",
+    "t": {
+      "en": "It is dangerous",
+      "es": "Es peligroso",
+      "pt": "É perigoso",
+      "fr": "C’est dangereux",
+      "it": "È pericoloso",
+      "ru": "Это опасно",
+      "de": "Es ist gefährlich"
+    }
+  },
+  {
+    "id": "safety_240",
+    "cat": "Safety",
+    "t": {
+      "en": "Emergency exit",
+      "es": "Salida de emergencia",
+      "pt": "Saída de emergência",
+      "fr": "Sortie de secours",
+      "it": "Uscita di emergenza",
+      "ru": "Аварийный выход",
+      "de": "Notausgang"
+    }
+  },
+  {
+    "id": "safety_241",
+    "cat": "Safety",
+    "t": {
+      "en": "Fire extinguisher",
+      "es": "Extintor",
+      "pt": "Extintor de incêndio",
+      "fr": "Extincteur",
+      "it": "Estintore",
+      "ru": "Огнетушитель",
+      "de": "Feuerlöscher"
+    }
+  },
+  {
+    "id": "safety_242",
+    "cat": "Safety",
+    "t": {
+      "en": "First aid kit",
+      "es": "Botiquín",
+      "pt": "Kit de primeiros socorros",
+      "fr": "Trousse de premiers secours",
+      "it": "Kit di pronto soccorso",
+      "ru": "Аптечка",
+      "de": "Erste-Hilfe-Kasten"
+    }
+  },
+  {
+    "id": "safety_243",
+    "cat": "Safety",
+    "t": {
+      "en": "Call for help",
+      "es": "Llama por ayuda",
+      "pt": "Chame por ajuda",
+      "fr": "Appelez à l’aide",
+      "it": "Chiama aiuto",
+      "ru": "Позови на помощь",
+      "de": "Ruf um Hilfe"
+    }
+  },
+  {
+    "id": "safety_244",
+    "cat": "Safety",
+    "t": {
+      "en": "Stay calm",
+      "es": "Mantén la calma",
+      "pt": "Mantenha a calma",
+      "fr": "Reste calme",
+      "it": "Stai calmo",
+      "ru": "Сохраняй спокойствие",
+      "de": "Bleib ruhig"
+    }
+  },
+  {
+    "id": "safety_245",
+    "cat": "Safety",
+    "t": {
+      "en": "Do not touch",
+      "es": "No toques",
+      "pt": "Não toque",
+      "fr": "Ne touchez pas",
+      "it": "Non toccare",
+      "ru": "Не трогай",
+      "de": "Nicht berühren"
+    }
+  },
+  {
+    "id": "safety_246",
+    "cat": "Safety",
+    "t": {
+      "en": "High voltage",
+      "es": "Alta tensión",
+      "pt": "Alta voltagem",
+      "fr": "Haute tension",
+      "it": "Alta tensione",
+      "ru": "Высокое напряжение",
+      "de": "Hochspannung"
+    }
+  },
+  {
+    "id": "safety_247",
+    "cat": "Safety",
+    "t": {
+      "en": "Wear a helmet",
+      "es": "Usa un casco",
+      "pt": "Use capacete",
+      "fr": "Portez un casque",
+      "it": "Indossa un casco",
+      "ru": "Надень шлем",
+      "de": "Trag einen Helm"
+    }
+  },
+  {
+    "id": "safety_248",
+    "cat": "Safety",
+    "t": {
+      "en": "Life jacket",
+      "es": "Chaleco salvavidas",
+      "pt": "Colete salva-vidas",
+      "fr": "Gilet de sauvetage",
+      "it": "Giubbotto di salvataggio",
+      "ru": "Спасательный жилет",
+      "de": "Rettungsweste"
+    }
+  },
+  {
+    "id": "safety_249",
+    "cat": "Safety",
+    "t": {
+      "en": "Stay inside",
+      "es": "Quédate adentro",
+      "pt": "Fique dentro",
+      "fr": "Restez à l’intérieur",
+      "it": "Rimani dentro",
+      "ru": "Оставайся внутри",
+      "de": "Bleib drinnen"
+    }
+  },
+  {
+    "id": "safety_250",
+    "cat": "Safety",
+    "t": {
+      "en": "Evacuate immediately",
+      "es": "Evacuar de inmediato",
+      "pt": "Evacue imediatamente",
+      "fr": "Évacuez immédiatement",
+      "it": "Evacuare subito",
+      "ru": "Эвакуируйтесь немедленно",
+      "de": "Sofort evakuieren"
+    }
+  },
+    {
+    "id": "social_251",
+    "cat": "Social",
+    "t": {
+      "en": "Good morning",
+      "es": "Buenos días",
+      "pt": "Bom dia",
+      "fr": "Bonjour",
+      "it": "Buongiorno",
+      "ru": "Доброе утро",
+      "de": "Guten Morgen"
+    }
+  },
+  {
+    "id": "social_252",
+    "cat": "Social",
+    "t": {
+      "en": "Good night",
+      "es": "Buenas noches",
+      "pt": "Boa noite",
+      "fr": "Bonne nuit",
+      "it": "Buonanotte",
+      "ru": "Спокойной ночи",
+      "de": "Gute Nacht"
+    }
+  },
+  {
+    "id": "social_253",
+    "cat": "Social",
+    "t": {
+      "en": "How are you?",
+      "es": "¿Cómo estás?",
+      "pt": "Como você está?",
+      "fr": "Comment ça va?",
+      "it": "Come stai?",
+      "ru": "Как дела?",
+      "de": "Wie geht es dir?"
+    }
+  },
+  {
+    "id": "social_254",
+    "cat": "Social",
+    "t": {
+      "en": "I am fine",
+      "es": "Estoy bien",
+      "pt": "Estou bem",
+      "fr": "Je vais bien",
+      "it": "Sto bene",
+      "ru": "Я в порядке",
+      "de": "Mir geht es gut"
+    }
+  },
+  {
+    "id": "social_255",
+    "cat": "Social",
+    "t": {
+      "en": "What is your name?",
+      "es": "¿Cómo te llamas?",
+      "pt": "Qual é o seu nome?",
+      "fr": "Comment tu t’appelles?",
+      "it": "Come ti chiami?",
+      "ru": "Как тебя зовут?",
+      "de": "Wie heißt du?"
+    }
+  },
+  {
+    "id": "social_256",
+    "cat": "Social",
+    "t": {
+      "en": "My name is...",
+      "es": "Me llamo...",
+      "pt": "Meu nome é...",
+      "fr": "Je m’appelle...",
+      "it": "Mi chiamo...",
+      "ru": "Меня зовут...",
+      "de": "Ich heiße..."
+    }
+  },
+  {
+    "id": "social_257",
+    "cat": "Social",
+    "t": {
+      "en": "Where are you from?",
+      "es": "¿De dónde eres?",
+      "pt": "De onde você é?",
+      "fr": "D’où viens-tu?",
+      "it": "Di dove sei?",
+      "ru": "Откуда ты?",
+      "de": "Woher kommst du?"
+    }
+  },
+  {
+    "id": "social_258",
+    "cat": "Social",
+    "t": {
+      "en": "I am from...",
+      "es": "Soy de...",
+      "pt": "Eu sou de...",
+      "fr": "Je viens de...",
+      "it": "Sono di...",
+      "ru": "Я из...",
+      "de": "Ich komme aus..."
+    }
+  },
+  {
+    "id": "social_259",
+    "cat": "Social",
+    "t": {
+      "en": "Nice to meet you",
+      "es": "Mucho gusto",
+      "pt": "Prazer em conhecê-lo",
+      "fr": "Enchanté",
+      "it": "Piacere di conoscerti",
+      "ru": "Приятно познакомиться",
+      "de": "Freut mich, dich kennenzulernen"
+    }
+  },
+  {
+    "id": "social_260",
+    "cat": "Social",
+    "t": {
+      "en": "Do you speak English?",
+      "es": "¿Hablas inglés?",
+      "pt": "Você fala inglês?",
+      "fr": "Parles-tu anglais?",
+      "it": "Parli inglese?",
+      "ru": "Вы говорите по-английски?",
+      "de": "Sprichst du Englisch?"
+    }
+  },
+  {
+    "id": "social_261",
+    "cat": "Social",
+    "t": {
+      "en": "I don’t understand",
+      "es": "No entiendo",
+      "pt": "Eu não entendo",
+      "fr": "Je ne comprends pas",
+      "it": "Non capisco",
+      "ru": "Я не понимаю",
+      "de": "Ich verstehe nicht"
+    }
+  },
+  {
+    "id": "social_262",
+    "cat": "Social",
+    "t": {
+      "en": "Please repeat",
+      "es": "Por favor repite",
+      "pt": "Por favor repita",
+      "fr": "Répète, s’il te plaît",
+      "it": "Per favore ripeti",
+      "ru": "Повтори, пожалуйста",
+      "de": "Bitte wiederholen"
+    }
+  },
+  {
+    "id": "social_263",
+    "cat": "Social",
+    "t": {
+      "en": "Can you help me?",
+      "es": "¿Puedes ayudarme?",
+      "pt": "Você pode me ajudar?",
+      "fr": "Peux-tu m’aider?",
+      "it": "Puoi aiutarmi?",
+      "ru": "Ты можешь мне помочь?",
+      "de": "Kannst du mir helfen?"
+    }
+  },
+  {
+    "id": "social_264",
+    "cat": "Social",
+    "t": {
+      "en": "Where do you live?",
+      "es": "¿Dónde vives?",
+      "pt": "Onde você mora?",
+      "fr": "Où habites-tu?",
+      "it": "Dove vivi?",
+      "ru": "Где ты живёшь?",
+      "de": "Wo wohnst du?"
+    }
+  },
+  {
+    "id": "social_265",
+    "cat": "Social",
+    "t": {
+      "en": "I live in...",
+      "es": "Vivo en...",
+      "pt": "Eu moro em...",
+      "fr": "J’habite à...",
+      "it": "Vivo a...",
+      "ru": "Я живу в...",
+      "de": "Ich wohne in..."
+    }
+  },
+    {
+    "id": "money_266",
+    "cat": "Money",
+    "t": {
+      "en": "Change",
+      "es": "Cambio",
+      "pt": "Troco",
+      "fr": "Monnaie",
+      "it": "Resto",
+      "ru": "Сдача",
+      "de": "Wechselgeld"
+    }
+  },
+  {
+    "id": "money_267",
+    "cat": "Money",
+    "t": {
+      "en": "Coins",
+      "es": "Monedas",
+      "pt": "Moedas",
+      "fr": "Pièces",
+      "it": "Monete",
+      "ru": "Монеты",
+      "de": "Münzen"
+    }
+  },
+  {
+    "id": "money_268",
+    "cat": "Money",
+    "t": {
+      "en": "Credit card",
+      "es": "Tarjeta de crédito",
+      "pt": "Cartão de crédito",
+      "fr": "Carte de crédit",
+      "it": "Carta di credito",
+      "ru": "Кредитная карта",
+      "de": "Kreditkarte"
+    }
+  },
+  {
+    "id": "money_269",
+    "cat": "Money",
+    "t": {
+      "en": "Debit card",
+      "es": "Tarjeta de débito",
+      "pt": "Cartão de débito",
+      "fr": "Carte de débit",
+      "it": "Carta di debito",
+      "ru": "Дебетовая карта",
+      "de": "Debitkarte"
+    }
+  },
+  {
+    "id": "money_270",
+    "cat": "Money",
+    "t": {
+      "en": "Wallet",
+      "es": "Cartera",
+      "pt": "Carteira",
+      "fr": "Portefeuille",
+      "it": "Portafoglio",
+      "ru": "Кошелёк",
+      "de": "Geldbörse"
+    }
+  },
+  {
+    "id": "money_271",
+    "cat": "Money",
+    "t": {
+      "en": "Pocket",
+      "es": "Bolsillo",
+      "pt": "Bolso",
+      "fr": "Poche",
+      "it": "Tasca",
+      "ru": "Карман",
+      "de": "Tasche"
+    }
+  },
+  {
+    "id": "money_272",
+    "cat": "Money",
+    "t": {
+      "en": "Price",
+      "es": "Precio",
+      "pt": "Preço",
+      "fr": "Prix",
+      "it": "Prezzo",
+      "ru": "Цена",
+      "de": "Preis"
+    }
+  },
+  {
+    "id": "money_273",
+    "cat": "Money",
+    "t": {
+      "en": "Expensive",
+      "es": "Caro",
+      "pt": "Caro",
+      "fr": "Cher",
+      "it": "Costoso",
+      "ru": "Дорого",
+      "de": "Teuer"
+    }
+  },
+  {
+    "id": "money_274",
+    "cat": "Money",
+    "t": {
+      "en": "Cheap",
+      "es": "Barato",
+      "pt": "Barato",
+      "fr": "Bon marché",
+      "it": "Economico",
+      "ru": "Дёшево",
+      "de": "Billig"
+    }
+  },
+  {
+    "id": "money_275",
+    "cat": "Money",
+    "t": {
+      "en": "Free",
+      "es": "Gratis",
+      "pt": "Grátis",
+      "fr": "Gratuit",
+      "it": "Gratis",
+      "ru": "Бесплатно",
+      "de": "Kostenlos"
+    }
+  },
+  {
+    "id": "money_276",
+    "cat": "Money",
+    "t": {
+      "en": "Market",
+      "es": "Mercado",
+      "pt": "Mercado",
+      "fr": "Marché",
+      "it": "Mercato",
+      "ru": "Рынок",
+      "de": "Markt"
+    }
+  },
+  {
+    "id": "money_277",
+    "cat": "Money",
+    "t": {
+      "en": "ATM",
+      "es": "Cajero automático",
+      "pt": "Caixa eletrônico",
+      "fr": "Distributeur automatique",
+      "it": "Bancomat",
+      "ru": "Банкомат",
+      "de": "Geldautomat"
+    }
+  },
+    {
+    "id": "documents_278",
+    "cat": "Documents",
+    "t": {
+      "en": "ID card",
+      "es": "Documento de identidad",
+      "pt": "Carteira de identidade",
+      "fr": "Carte d’identité",
+      "it": "Carta d’identità",
+      "ru": "Удостоверение личности",
+      "de": "Ausweis"
+    }
+  },
+  {
+    "id": "documents_279",
+    "cat": "Documents",
+    "t": {
+      "en": "Driver’s license",
+      "es": "Licencia de conducir",
+      "pt": "Carteira de motorista",
+      "fr": "Permis de conduire",
+      "it": "Patente di guida",
+      "ru": "Водительское удостоверение",
+      "de": "Führerschein"
+    }
+  },
+  {
+    "id": "documents_280",
+    "cat": "Documents",
+    "t": {
+      "en": "Ticket",
+      "es": "Boleto",
+      "pt": "Bilhete",
+      "fr": "Billet",
+      "it": "Biglietto",
+      "ru": "Билет",
+      "de": "Fahrkarte"
+    }
+  },
+  {
+    "id": "documents_281",
+    "cat": "Documents",
+    "t": {
+      "en": "Boarding pass",
+      "es": "Tarjeta de embarque",
+      "pt": "Cartão de embarque",
+      "fr": "Carte d’embarquement",
+      "it": "Carta d’imbarco",
+      "ru": "Посадочный талон",
+      "de": "Bordkarte"
+    }
+  },
+  {
+    "id": "documents_282",
+    "cat": "Documents",
+    "t": {
+      "en": "Permit",
+      "es": "Permiso",
+      "pt": "Permissão",
+      "fr": "Permis",
+      "it": "Permesso",
+      "ru": "Разрешение",
+      "de": "Genehmigung"
+    }
+  },
+  {
+    "id": "documents_283",
+    "cat": "Documents",
+    "t": {
+      "en": "Certificate",
+      "es": "Certificado",
+      "pt": "Certificado",
+      "fr": "Certificat",
+      "it": "Certificato",
+      "ru": "Сертификат",
+      "de": "Zertifikat"
+    }
+  },
+  {
+    "id": "documents_284",
+    "cat": "Documents",
+    "t": {
+      "en": "Contract",
+      "es": "Contrato",
+      "pt": "Contrato",
+      "fr": "Contrat",
+      "it": "Contratto",
+      "ru": "Контракт",
+      "de": "Vertrag"
+    }
+  },
+  {
+    "id": "documents_285",
+    "cat": "Documents",
+    "t": {
+      "en": "Form",
+      "es": "Formulario",
+      "pt": "Formulário",
+      "fr": "Formulaire",
+      "it": "Modulo",
+      "ru": "Форма",
+      "de": "Formular"
+    }
+  },
+  {
+    "id": "documents_286",
+    "cat": "Documents",
+    "t": {
+      "en": "Receipt",
+      "es": "Recibo",
+      "pt": "Recibo",
+      "fr": "Reçu",
+      "it": "Ricevuta",
+      "ru": "Квитанция",
+      "de": "Quittung"
+    }
+  },
+  {
+    "id": "documents_287",
+    "cat": "Documents",
+    "t": {
+      "en": "Signature",
+      "es": "Firma",
+      "pt": "Assinatura",
+      "fr": "Signature",
+      "it": "Firma",
+      "ru": "Подпись",
+      "de": "Unterschrift"
+    }
+  },
+    {
+    "id": "basics_288",
+    "cat": "Basics",
+    "t": {
+      "en": "Excuse me",
+      "es": "Disculpe",
+      "pt": "Com licença",
+      "fr": "Excusez-moi",
+      "it": "Scusi",
+      "ru": "Извините",
+      "de": "Entschuldigung"
+    }
+  },
+  {
+    "id": "basics_289",
+    "cat": "Basics",
+    "t": {
+      "en": "Sorry",
+      "es": "Lo siento",
+      "pt": "Desculpe",
+      "fr": "Désolé",
+      "it": "Mi dispiace",
+      "ru": "Простите",
+      "de": "Es tut mir leid"
+    }
+  },
+  {
+    "id": "basics_290",
+    "cat": "Basics",
+    "t": {
+      "en": "You’re welcome",
+      "es": "De nada",
+      "pt": "De nada",
+      "fr": "De rien",
+      "it": "Prego",
+      "ru": "Пожалуйста",
+      "de": "Gern geschehen"
+    }
+  },
+  {
+    "id": "basics_291",
+    "cat": "Basics",
+    "t": {
+      "en": "OK",
+      "es": "De acuerdo",
+      "pt": "Certo",
+      "fr": "D’accord",
+      "it": "Va bene",
+      "ru": "Хорошо",
+      "de": "In Ordnung"
+    }
+  },
+  {
+    "id": "basics_292",
+    "cat": "Basics",
+    "t": {
+      "en": "Good morning",
+      "es": "Buenos días",
+      "pt": "Bom dia",
+      "fr": "Bonjour",
+      "it": "Buongiorno",
+      "ru": "Доброе утро",
+      "de": "Guten Morgen"
+    }
+  },
+  {
+    "id": "basics_293",
+    "cat": "Basics",
+    "t": {
+      "en": "Good afternoon",
+      "es": "Buenas tardes",
+      "pt": "Boa tarde",
+      "fr": "Bon après-midi",
+      "it": "Buon pomeriggio",
+      "ru": "Добрый день",
+      "de": "Guten Tag"
+    }
+  },
+  {
+    "id": "basics_294",
+    "cat": "Basics",
+    "t": {
+      "en": "Good evening",
+      "es": "Buenas noches",
+      "pt": "Boa noite",
+      "fr": "Bonsoir",
+      "it": "Buonasera",
+      "ru": "Добрый вечер",
+      "de": "Guten Abend"
+    }
+  },
+  {
+    "id": "basics_295",
+    "cat": "Basics",
+    "t": {
+      "en": "Good night",
+      "es": "Buenas noches",
+      "pt": "Boa noite",
+      "fr": "Bonne nuit",
+      "it": "Buonanotte",
+      "ru": "Спокойной ночи",
+      "de": "Gute Nacht"
+    }
+  },
+  {
+    "id": "basics_296",
+    "cat": "Basics",
+    "t": {
+      "en": "What is your name?",
+      "es": "¿Cómo te llamas?",
+      "pt": "Qual é o seu nome?",
+      "fr": "Comment tu t’appelles ?",
+      "it": "Come ti chiami?",
+      "ru": "Как тебя зовут?",
+      "de": "Wie heißt du?"
+    }
+  },
+  {
+    "id": "basics_297",
+    "cat": "Basics",
+    "t": {
+      "en": "My name is...",
+      "es": "Me llamo...",
+      "pt": "Meu nome é...",
+      "fr": "Je m’appelle...",
+      "it": "Mi chiamo...",
+      "ru": "Меня зовут...",
+      "de": "Ich heiße..."
+    }
+  },
+  {
+    "id": "basics_298",
+    "cat": "Basics",
+    "t": {
+      "en": "Do you speak English?",
+      "es": "¿Hablas inglés?",
+      "pt": "Você fala inglês?",
+      "fr": "Parles-tu anglais ?",
+      "it": "Parli inglese?",
+      "ru": "Вы говорите по-английски?",
+      "de": "Sprichst du Englisch?"
+    }
+  },
+  {
+    "id": "basics_299",
+    "cat": "Basics",
+    "t": {
+      "en": "I don’t understand",
+      "es": "No entiendo",
+      "pt": "Eu não entendo",
+      "fr": "Je ne comprends pas",
+      "it": "Non capisco",
+      "ru": "Я не понимаю",
+      "de": "Ich verstehe nicht"
+    }
+  },
+  {
+    "id": "basics_300",
+    "cat": "Basics",
+    "t": {
+      "en": "Please speak slowly",
+      "es": "Por favor, hable despacio",
+      "pt": "Por favor, fale devagar",
+      "fr": "Parlez lentement, s’il vous plaît",
+      "it": "Per favore, parla lentamente",
+      "ru": "Пожалуйста, говорите медленнее",
+      "de": "Bitte sprechen Sie langsam"
+    }
+  },
+  {
+    "id": "basics_301",
+    "cat": "Basics",
+    "t": {
+      "en": "Where is the bathroom?",
+      "es": "¿Dónde está el baño?",
+      "pt": "Onde fica o banheiro?",
+      "fr": "Où sont les toilettes ?",
+      "it": "Dov’è il bagno?",
+      "ru": "Где туалет?",
+      "de": "Wo ist die Toilette?"
+    }
   }
+
 ]
